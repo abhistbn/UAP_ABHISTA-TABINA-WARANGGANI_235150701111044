@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/ivPlantDetailImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/placeholder_image" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/bg_detail"
+        android:elevation="8dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <View
+                android:id="@+id/grabber"
+                android:layout_width="48dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_grabber_handle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPlantDetailName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/grabber"
+                tools:text="Monstera Deliciosa" />
+
+            <TextView
+                android:id="@+id/tvPlantDetailPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#A3B18A"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvPlantDetailName"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantDetailName"
+                tools:text="Rp 150.000" />
+
+            <TextView
+                android:id="@+id/labelDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Tentang Tanaman"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvPlantDetailName"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantDetailPrice" />
+
+            <TextView
+                android:id="@+id/tvPlantDetailDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:lineSpacingExtra="6dp"
+                android:textColor="#616161"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/tvPlantDetailName"
+                app:layout_constraintStart_toStartOf="@id/tvPlantDetailName"
+                app:layout_constraintTop_toBottomOf="@id/labelDescription"
+                tools:text="Ini adalah deskripsi panjang mengenai tanaman hias yang sangat cantik dan cocok untuk diletakkan di dalam ruangan. Perawatannya juga sangat mudah." />
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/btn_add"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvPlantDetailName"
+                app:layout_constraintStart_toStartOf="@id/tvPlantDetailName"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantDetailDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_scrim"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
